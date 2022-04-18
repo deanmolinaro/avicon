@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Trial name="R3_NE_1" notes="">
+
+  <Parameters>
+    <Param header="0" name="x2d" value="R3_NE_1.x2d"/>
+    <Param header="0" name="Path" value="C:\Users\Dean-PC\Documents\epic_git\avicon\Example\AB11\03.10.2011"/>
+  </Parameters>
+
+  <Run name="" notes="">
+    <Parameters>
+      <Param header="0" name="Version" value="2.12.1.133760h"/>
+      <Param header="0" name="Start Date" value="2022-Apr-18 16:56:06"/>
+    </Parameters>
+    <OperationType name="Core Processing" notes="">
+      <OperationSubType name="Combined Processing" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:56:06"/>
+          <Param header="1" name="Frame Range" value=""/>
+          <Param header="0" name="First Frame" value="3430"/>
+          <Param header="0" name="Last Frame" value="3840"/>
+          <Param header="1" name="General" value=""/>
+          <Param header="0" name="Processing Output Level" value="Labels"/>
+          <Param header="1" name="Grayscale Circle Fitting" value=""/>
+          <Param header="0" name="Enable" value="Yes"/>
+          <Param header="0" name="Circularity Threshold Tweak" value="0"/>
+          <Param header="1" name="Reconstruction" value=""/>
+          <Param header="0" name="3D Predictions" value="No"/>
+          <Param header="0" name="Environmental Drift Tolerance" value="1.5"/>
+          <Param header="0" name="Minimum Cameras to Start Trajectory" value="3"/>
+          <Param header="0" name="Minimum Cameras to Continue Trajectory" value="2"/>
+          <Param header="0" name="Reconstruction Minimum Separation" value="14"/>
+          <Param header="0" name="Minimum Centroid Radius" value="0"/>
+          <Param header="0" name="Maximum Centroid Radius" value="50"/>
+          <Param header="0" name="Minimum Reconstruction Radius" value="0"/>
+          <Param header="0" name="Maximum Reconstruction Radius" value="1000"/>
+          <Param header="0" name="Volume Min X" value="-100000"/>
+          <Param header="0" name="Volume Min Y" value="-100000"/>
+          <Param header="0" name="Volume Min Z" value="-100000"/>
+          <Param header="0" name="Volume Max X" value="100000"/>
+          <Param header="0" name="Volume Max Y" value="100000"/>
+          <Param header="0" name="Volume Max Z" value="100000"/>
+          <Param header="1" name="Trajectory Tracking" value=""/>
+          <Param header="0" name="Trajectory Startup Error" value="150"/>
+          <Param header="0" name="Trajectory Prediction Error" value="150"/>
+          <Param header="0" name="Max Trajectory Length to Delete" value="0"/>
+          <Param header="1" name="Labeling" value=""/>
+          <Param header="0" name="Label Completeness Entrance Threshold" value="0.84999999999999998"/>
+          <Param header="0" name="Booting Versus Tracking" value="0.5"/>
+          <Param header="0" name="Tracking Quality" value="0"/>
+          <Param header="0" name="Smoothing Factor" value="1"/>
+          <Param header="0" name="Single pass" value="No"/>
+          <Param header="1" name="Kinematic Fitting" value=""/>
+          <Param header="0" name="Prior Importance" value="25"/>
+          <Param header="0" name="Mean-Pose Ratio" value="1"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+    <OperationType name="Manual Edits" notes="">
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:57:40"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:57:41"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:57:44"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:57:44"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:57:45"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:57:45"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+    <OperationType name="Fill Gaps &amp; Filter Data" notes="">
+      <OperationSubType name="Fill Gaps - Woltring" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:58:09"/>
+          <Param header="0" name="Max Gap Length" value="1"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="3430"/>
+          <Param header="0" name="Last Frame" value="3840"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 136 out of 198 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:58:09"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="3430"/>
+          <Param header="0" name="Last Frame" value="3840"/>
+          <Param header="0" name="Trajectories" value="LMMA,LANK,LS1,LS2,LS3,LKNE,LMFC"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 11 out of 11 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:58:09"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="3430"/>
+          <Param header="0" name="Last Frame" value="3840"/>
+          <Param header="0" name="Trajectories" value="LKNE,LMFC,LT1,LT2,LT3"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 25 out of 26 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:58:09"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="3430"/>
+          <Param header="0" name="Last Frame" value="3840"/>
+          <Param header="0" name="Trajectories" value="LKNE,LMFC,LT1,LT2,LT3,LGTR"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 1 out of 1 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:58:09"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="3430"/>
+          <Param header="0" name="Last Frame" value="3840"/>
+          <Param header="0" name="Trajectories" value="RMMA,RANK,RS1,RS2,RS3,RKNE,RMFC"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 10 out of 10 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:58:09"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="3430"/>
+          <Param header="0" name="Last Frame" value="3840"/>
+          <Param header="0" name="Trajectories" value="RKNE,RMFC,RT1,RT2,RT3"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 2 out of 2 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:58:09"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="3430"/>
+          <Param header="0" name="Last Frame" value="3840"/>
+          <Param header="0" name="Trajectories" value="RKNE,RMFC,RT1,RT2,RT3,RGTR"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 1 out of 1 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:58:09"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="3430"/>
+          <Param header="0" name="Last Frame" value="3840"/>
+          <Param header="0" name="Trajectories" value="LPSI,RPSI,LASI,RASI"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 2 out of 2 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:58:09"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="3430"/>
+          <Param header="0" name="Last Frame" value="3840"/>
+          <Param header="0" name="Trajectories" value="LSHO,RSHO,CLAV,C7"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 4 out of 4 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Pattern" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:58:09"/>
+          <Param header="0" name="Max Gap Length" value="100"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="3430"/>
+          <Param header="0" name="Last Frame" value="3840"/>
+          <Param header="0" name="Trajectories" value="LTOE,LHEE"/>
+          <Param header="0" name="Donor Trajectory" value="LMT5"/>
+          <Param header="0" name="Allow Unlabeled Donors" value="Yes"/>
+          <Param header="0" name="Allow Donor From Different Segment" value="Yes"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 1 out of 1 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Pattern" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:58:09"/>
+          <Param header="0" name="Max Gap Length" value="100"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="3430"/>
+          <Param header="0" name="Last Frame" value="3840"/>
+          <Param header="0" name="Trajectories" value="LMT5,LHEE"/>
+          <Param header="0" name="Donor Trajectory" value="LTOE"/>
+          <Param header="0" name="Allow Unlabeled Donors" value="Yes"/>
+          <Param header="0" name="Allow Donor From Different Segment" value="Yes"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 5 out of 5 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+  </Run>
+
+  <Run name="" notes="">
+    <Parameters>
+      <Param header="0" name="Version" value="2.12.1.133760h"/>
+      <Param header="0" name="Start Date" value="2022-Apr-18 16:58:42"/>
+    </Parameters>
+    <OperationType name="Core Processing" notes="">
+      <OperationSubType name="Combined Processing" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 16:58:42"/>
+          <Param header="1" name="Frame Range" value=""/>
+          <Param header="0" name="First Frame" value="5354"/>
+          <Param header="0" name="Last Frame" value="5798"/>
+          <Param header="1" name="General" value=""/>
+          <Param header="0" name="Processing Output Level" value="Labels"/>
+          <Param header="1" name="Grayscale Circle Fitting" value=""/>
+          <Param header="0" name="Enable" value="Yes"/>
+          <Param header="0" name="Circularity Threshold Tweak" value="0"/>
+          <Param header="1" name="Reconstruction" value=""/>
+          <Param header="0" name="3D Predictions" value="No"/>
+          <Param header="0" name="Environmental Drift Tolerance" value="1.5"/>
+          <Param header="0" name="Minimum Cameras to Start Trajectory" value="3"/>
+          <Param header="0" name="Minimum Cameras to Continue Trajectory" value="2"/>
+          <Param header="0" name="Reconstruction Minimum Separation" value="14"/>
+          <Param header="0" name="Minimum Centroid Radius" value="0"/>
+          <Param header="0" name="Maximum Centroid Radius" value="50"/>
+          <Param header="0" name="Minimum Reconstruction Radius" value="0"/>
+          <Param header="0" name="Maximum Reconstruction Radius" value="1000"/>
+          <Param header="0" name="Volume Min X" value="-100000"/>
+          <Param header="0" name="Volume Min Y" value="-100000"/>
+          <Param header="0" name="Volume Min Z" value="-100000"/>
+          <Param header="0" name="Volume Max X" value="100000"/>
+          <Param header="0" name="Volume Max Y" value="100000"/>
+          <Param header="0" name="Volume Max Z" value="100000"/>
+          <Param header="1" name="Trajectory Tracking" value=""/>
+          <Param header="0" name="Trajectory Startup Error" value="150"/>
+          <Param header="0" name="Trajectory Prediction Error" value="150"/>
+          <Param header="0" name="Max Trajectory Length to Delete" value="0"/>
+          <Param header="1" name="Labeling" value=""/>
+          <Param header="0" name="Label Completeness Entrance Threshold" value="0.84999999999999998"/>
+          <Param header="0" name="Booting Versus Tracking" value="0.5"/>
+          <Param header="0" name="Tracking Quality" value="0"/>
+          <Param header="0" name="Smoothing Factor" value="1"/>
+          <Param header="0" name="Single pass" value="No"/>
+          <Param header="1" name="Kinematic Fitting" value=""/>
+          <Param header="0" name="Prior Importance" value="25"/>
+          <Param header="0" name="Mean-Pose Ratio" value="1"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+    <OperationType name="Manual Edits" notes="">
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:13"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:14"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:15"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:16"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:16"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:17"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:18"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:18"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:19"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:20"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:21"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:22"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:23"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:23"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:24"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:24"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:25"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:25"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:25"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:26"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:27"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:27"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:27"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:28"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:28"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+  </Run>
+
+  <Run name="" notes="">
+    <Parameters>
+      <Param header="0" name="Version" value="2.12.1.133760h"/>
+      <Param header="0" name="Start Date" value="2022-Apr-18 17:00:50"/>
+    </Parameters>
+    <OperationType name="Core Processing" notes="">
+      <OperationSubType name="Combined Processing" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:00:50"/>
+          <Param header="1" name="Frame Range" value=""/>
+          <Param header="0" name="First Frame" value="7116"/>
+          <Param header="0" name="Last Frame" value="7536"/>
+          <Param header="1" name="General" value=""/>
+          <Param header="0" name="Processing Output Level" value="Labels"/>
+          <Param header="1" name="Grayscale Circle Fitting" value=""/>
+          <Param header="0" name="Enable" value="Yes"/>
+          <Param header="0" name="Circularity Threshold Tweak" value="0"/>
+          <Param header="1" name="Reconstruction" value=""/>
+          <Param header="0" name="3D Predictions" value="No"/>
+          <Param header="0" name="Environmental Drift Tolerance" value="1.5"/>
+          <Param header="0" name="Minimum Cameras to Start Trajectory" value="3"/>
+          <Param header="0" name="Minimum Cameras to Continue Trajectory" value="2"/>
+          <Param header="0" name="Reconstruction Minimum Separation" value="14"/>
+          <Param header="0" name="Minimum Centroid Radius" value="0"/>
+          <Param header="0" name="Maximum Centroid Radius" value="50"/>
+          <Param header="0" name="Minimum Reconstruction Radius" value="0"/>
+          <Param header="0" name="Maximum Reconstruction Radius" value="1000"/>
+          <Param header="0" name="Volume Min X" value="-100000"/>
+          <Param header="0" name="Volume Min Y" value="-100000"/>
+          <Param header="0" name="Volume Min Z" value="-100000"/>
+          <Param header="0" name="Volume Max X" value="100000"/>
+          <Param header="0" name="Volume Max Y" value="100000"/>
+          <Param header="0" name="Volume Max Z" value="100000"/>
+          <Param header="1" name="Trajectory Tracking" value=""/>
+          <Param header="0" name="Trajectory Startup Error" value="150"/>
+          <Param header="0" name="Trajectory Prediction Error" value="150"/>
+          <Param header="0" name="Max Trajectory Length to Delete" value="0"/>
+          <Param header="1" name="Labeling" value=""/>
+          <Param header="0" name="Label Completeness Entrance Threshold" value="0.84999999999999998"/>
+          <Param header="0" name="Booting Versus Tracking" value="0.5"/>
+          <Param header="0" name="Tracking Quality" value="0"/>
+          <Param header="0" name="Smoothing Factor" value="1"/>
+          <Param header="0" name="Single pass" value="No"/>
+          <Param header="1" name="Kinematic Fitting" value=""/>
+          <Param header="0" name="Prior Importance" value="25"/>
+          <Param header="0" name="Mean-Pose Ratio" value="1"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+    <OperationType name="Manual Edits" notes="">
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:23"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:23"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:32"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:35"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="SetTrajectory" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:37"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+    <OperationType name="Fill Gaps &amp; Filter Data" notes="">
+      <OperationSubType name="Fill Gaps - Woltring" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:52"/>
+          <Param header="0" name="Max Gap Length" value="1"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="7116"/>
+          <Param header="0" name="Last Frame" value="7536"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 133 out of 189 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:52"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="7116"/>
+          <Param header="0" name="Last Frame" value="7536"/>
+          <Param header="0" name="Trajectories" value="LMMA,LANK,LS1,LS2,LS3,LKNE,LMFC"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 11 out of 11 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:52"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="7116"/>
+          <Param header="0" name="Last Frame" value="7536"/>
+          <Param header="0" name="Trajectories" value="LKNE,LMFC,LT1,LT2,LT3"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 13 out of 13 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:52"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="7116"/>
+          <Param header="0" name="Last Frame" value="7536"/>
+          <Param header="0" name="Trajectories" value="RMMA,RANK,RS1,RS2,RS3,RKNE,RMFC"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 10 out of 10 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:52"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="7116"/>
+          <Param header="0" name="Last Frame" value="7536"/>
+          <Param header="0" name="Trajectories" value="RKNE,RMFC,RT1,RT2,RT3"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 10 out of 10 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:52"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="7116"/>
+          <Param header="0" name="Last Frame" value="7536"/>
+          <Param header="0" name="Trajectories" value="RKNE,RMFC,RT1,RT2,RT3,RGTR"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 3 out of 3 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:52"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="7116"/>
+          <Param header="0" name="Last Frame" value="7536"/>
+          <Param header="0" name="Trajectories" value="LPSI,RPSI,LASI,RASI"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 5 out of 5 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:52"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="7116"/>
+          <Param header="0" name="Last Frame" value="7536"/>
+          <Param header="0" name="Trajectories" value="LSHO,RSHO,CLAV,C7"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 2 out of 2 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Pattern" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:52"/>
+          <Param header="0" name="Max Gap Length" value="100"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="7116"/>
+          <Param header="0" name="Last Frame" value="7536"/>
+          <Param header="0" name="Trajectories" value="LTOE,LHEE"/>
+          <Param header="0" name="Donor Trajectory" value="LMT5"/>
+          <Param header="0" name="Allow Unlabeled Donors" value="Yes"/>
+          <Param header="0" name="Allow Donor From Different Segment" value="Yes"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 1 out of 1 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Pattern" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:02:52"/>
+          <Param header="0" name="Max Gap Length" value="100"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="7116"/>
+          <Param header="0" name="Last Frame" value="7536"/>
+          <Param header="0" name="Trajectories" value="LMT5,LHEE"/>
+          <Param header="0" name="Donor Trajectory" value="LTOE"/>
+          <Param header="0" name="Allow Unlabeled Donors" value="Yes"/>
+          <Param header="0" name="Allow Donor From Different Segment" value="Yes"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 1 out of 1 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+  </Run>
+
+  <Run name="" notes="">
+    <Parameters>
+      <Param header="0" name="Version" value="2.12.1.133760h"/>
+      <Param header="0" name="Start Date" value="2022-Apr-18 17:03:25"/>
+    </Parameters>
+    <OperationType name="Core Processing" notes="">
+      <OperationSubType name="Combined Processing" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:03:25"/>
+          <Param header="1" name="Frame Range" value=""/>
+          <Param header="0" name="First Frame" value="9103"/>
+          <Param header="0" name="Last Frame" value="9544"/>
+          <Param header="1" name="General" value=""/>
+          <Param header="0" name="Processing Output Level" value="Labels"/>
+          <Param header="1" name="Grayscale Circle Fitting" value=""/>
+          <Param header="0" name="Enable" value="Yes"/>
+          <Param header="0" name="Circularity Threshold Tweak" value="0"/>
+          <Param header="1" name="Reconstruction" value=""/>
+          <Param header="0" name="3D Predictions" value="No"/>
+          <Param header="0" name="Environmental Drift Tolerance" value="1.5"/>
+          <Param header="0" name="Minimum Cameras to Start Trajectory" value="3"/>
+          <Param header="0" name="Minimum Cameras to Continue Trajectory" value="2"/>
+          <Param header="0" name="Reconstruction Minimum Separation" value="14"/>
+          <Param header="0" name="Minimum Centroid Radius" value="0"/>
+          <Param header="0" name="Maximum Centroid Radius" value="50"/>
+          <Param header="0" name="Minimum Reconstruction Radius" value="0"/>
+          <Param header="0" name="Maximum Reconstruction Radius" value="1000"/>
+          <Param header="0" name="Volume Min X" value="-100000"/>
+          <Param header="0" name="Volume Min Y" value="-100000"/>
+          <Param header="0" name="Volume Min Z" value="-100000"/>
+          <Param header="0" name="Volume Max X" value="100000"/>
+          <Param header="0" name="Volume Max Y" value="100000"/>
+          <Param header="0" name="Volume Max Z" value="100000"/>
+          <Param header="1" name="Trajectory Tracking" value=""/>
+          <Param header="0" name="Trajectory Startup Error" value="150"/>
+          <Param header="0" name="Trajectory Prediction Error" value="150"/>
+          <Param header="0" name="Max Trajectory Length to Delete" value="0"/>
+          <Param header="1" name="Labeling" value=""/>
+          <Param header="0" name="Label Completeness Entrance Threshold" value="0.84999999999999998"/>
+          <Param header="0" name="Booting Versus Tracking" value="0.5"/>
+          <Param header="0" name="Tracking Quality" value="0"/>
+          <Param header="0" name="Smoothing Factor" value="1"/>
+          <Param header="0" name="Single pass" value="No"/>
+          <Param header="1" name="Kinematic Fitting" value=""/>
+          <Param header="0" name="Prior Importance" value="25"/>
+          <Param header="0" name="Mean-Pose Ratio" value="1"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+    <OperationType name="Manual Edits" notes="">
+      <OperationSubType name="Label Trajectory  AB11:LGTR" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:04:38"/>
+          <Param header="0" name="Label" value="AB11:LGTR"/>
+          <Param header="0" name="Frame" value="5677"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  AB11:LGTR" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:04:41"/>
+          <Param header="0" name="Label" value="AB11:LGTR"/>
+          <Param header="0" name="Frame" value="5678"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  AB11:LGTR" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:04:44"/>
+          <Param header="0" name="Label" value="AB11:LGTR"/>
+          <Param header="0" name="Frame" value="5681"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  AB11:LGTR" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:04:48"/>
+          <Param header="0" name="Label" value="AB11:LGTR"/>
+          <Param header="0" name="Frame" value="5683"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  AB11:LGTR" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:04:52"/>
+          <Param header="0" name="Label" value="AB11:LGTR"/>
+          <Param header="0" name="Frame" value="5685"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Unlabel Trajectory Forwards - AB11:LGTR" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:04:55"/>
+          <Param header="0" name="Trajectory" value="AB11:LGTR"/>
+          <Param header="0" name="Unlabeled from" value="5688"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  AB11:LGTR" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:04:57"/>
+          <Param header="0" name="Label" value="AB11:LGTR"/>
+          <Param header="0" name="Frame" value="5689"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  AB11:LGTR" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:05:02"/>
+          <Param header="0" name="Label" value="AB11:LGTR"/>
+          <Param header="0" name="Frame" value="5695"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+    <OperationType name="Fill Gaps &amp; Filter Data" notes="">
+      <OperationSubType name="Fill Gaps - Woltring" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:05:22"/>
+          <Param header="0" name="Max Gap Length" value="1"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="5354"/>
+          <Param header="0" name="Last Frame" value="5798"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 154 out of 286 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:05:22"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="5354"/>
+          <Param header="0" name="Last Frame" value="5798"/>
+          <Param header="0" name="Trajectories" value="LMMA,LANK,LS1,LS2,LS3,LKNE,LMFC"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 22 out of 22 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:05:22"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="5354"/>
+          <Param header="0" name="Last Frame" value="5798"/>
+          <Param header="0" name="Trajectories" value="LKNE,LMFC,LT1,LT2,LT3"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 31 out of 31 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:05:22"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="5354"/>
+          <Param header="0" name="Last Frame" value="5798"/>
+          <Param header="0" name="Trajectories" value="LKNE,LMFC,LT1,LT2,LT3,LGTR"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 2 out of 2 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:05:22"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="5354"/>
+          <Param header="0" name="Last Frame" value="5798"/>
+          <Param header="0" name="Trajectories" value="RMMA,RANK,RS1,RS2,RS3,RKNE,RMFC"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 8 out of 8 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:05:22"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="5354"/>
+          <Param header="0" name="Last Frame" value="5798"/>
+          <Param header="0" name="Trajectories" value="RKNE,RMFC,RT1,RT2,RT3"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 8 out of 8 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:05:22"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="5354"/>
+          <Param header="0" name="Last Frame" value="5798"/>
+          <Param header="0" name="Trajectories" value="LPSI,RPSI,LASI,RASI"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 25 out of 25 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:05:22"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="5354"/>
+          <Param header="0" name="Last Frame" value="5798"/>
+          <Param header="0" name="Trajectories" value="LSHO,RSHO,CLAV,C7"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 5 out of 5 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Pattern" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:05:22"/>
+          <Param header="0" name="Max Gap Length" value="100"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="5354"/>
+          <Param header="0" name="Last Frame" value="5798"/>
+          <Param header="0" name="Trajectories" value="LTOE,LHEE"/>
+          <Param header="0" name="Donor Trajectory" value="LMT5"/>
+          <Param header="0" name="Allow Unlabeled Donors" value="Yes"/>
+          <Param header="0" name="Allow Donor From Different Segment" value="Yes"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 1 out of 1 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Fill Gaps - Pattern" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:05:22"/>
+          <Param header="0" name="Max Gap Length" value="100"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="5354"/>
+          <Param header="0" name="Last Frame" value="5798"/>
+          <Param header="0" name="Trajectories" value="LMT5,LHEE"/>
+          <Param header="0" name="Donor Trajectory" value="LTOE"/>
+          <Param header="0" name="Allow Unlabeled Donors" value="Yes"/>
+          <Param header="0" name="Allow Donor From Different Segment" value="Yes"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 1 out of 1 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+    <OperationType name="Manual Edits" notes="">
+      <OperationSubType name="Delete All Unlabeled Trajectories" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:05:58"/>
+          <Param header="0" name="Delete Count" value="3"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+    <OperationType name="Fill Gaps &amp; Filter Data" notes="">
+      <OperationSubType name="Fill Gaps - Rigid Body" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2022-Apr-18 17:06:01"/>
+          <Param header="0" name="Max Gap Length" value="200"/>
+          <Param header="0" name="Max Gap Units" value="Frames"/>
+          <Param header="0" name="First Frame" value="5354"/>
+          <Param header="0" name="Last Frame" value="5798"/>
+          <Param header="0" name="Trajectories" value="LPSI,RPSI,LASI,RASI"/>
+          <Param header="1" name="Log Output" value=""/>
+          <Param header="0" name="Filled 2 out of 2 gaps" value=""/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+  </Run>
+
+</Trial>

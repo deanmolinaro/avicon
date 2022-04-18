@@ -1,0 +1,889 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no" ?>
+<Pipeline>
+
+  <!--/////////////////////// 
+  ////  RIGID BODY FILL  ////
+  ////////////////////////-->
+
+  <!-- Spline Fill -->
+  <Entry DisplayName="Fill Gaps - Woltring" Enabled="1" OperationId="128" OperationName="FillGapsWoltring">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="1"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Left Shank -->
+  <Entry DisplayName="Fill Left Shank" Enabled="1" OperationId="222" OperationName="FillGapsRigidBody">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="200"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="FirstFrame"/>
+      <Param macro="SELECTED_END_FRAME" name="LastFrame"/>
+      <Param name="Trajectories" value="LMMA,LANK,LS1,LS2,LS3,LKNE,LMFC"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Left Femur -->
+  <Entry DisplayName="Fill Left Femur" Enabled="1" OperationId="222" OperationName="FillGapsRigidBody">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="200"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="FirstFrame"/>
+      <Param macro="SELECTED_END_FRAME" name="LastFrame"/>
+      <Param name="Trajectories" value="LKNE,LMFC,LT1,LT2,LT3"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Left Femur With LGTR -->
+  <Entry DisplayName="Fill Left Femur" Enabled="1" OperationId="222" OperationName="FillGapsRigidBody">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="200"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="FirstFrame"/>
+      <Param macro="SELECTED_END_FRAME" name="LastFrame"/>
+      <Param name="Trajectories" value="LKNE,LMFC,LT1,LT2,LT3,LGTR"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Right Shank -->
+  <Entry DisplayName="Fill Right Shank" Enabled="1" OperationId="222" OperationName="FillGapsRigidBody">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="200"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="FirstFrame"/>
+      <Param macro="SELECTED_END_FRAME" name="LastFrame"/>
+      <Param name="Trajectories" value="RMMA,RANK,RS1,RS2,RS3,RKNE,RMFC"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Right Femur -->
+  <Entry DisplayName="Fill Right Femur" Enabled="1" OperationId="222" OperationName="FillGapsRigidBody">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="200"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="FirstFrame"/>
+      <Param macro="SELECTED_END_FRAME" name="LastFrame"/>
+      <Param name="Trajectories" value="RKNE,RMFC,RT1,RT2,RT3"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Right Femur With RGTR -->
+  <Entry DisplayName="Fill Right Femur" Enabled="1" OperationId="222" OperationName="FillGapsRigidBody">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="200"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="FirstFrame"/>
+      <Param macro="SELECTED_END_FRAME" name="LastFrame"/>
+      <Param name="Trajectories" value="RKNE,RMFC,RT1,RT2,RT3,RGTR"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Pelvis -->
+  <Entry DisplayName="Fill Pelvis" Enabled="1" OperationId="222" OperationName="FillGapsRigidBody">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="200"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="FirstFrame"/>
+      <Param macro="SELECTED_END_FRAME" name="LastFrame"/>
+      <Param name="Trajectories" value="LPSI,RPSI,LASI,RASI"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Pelvis With GTR -->
+  <Entry DisplayName="Fill Pelvis" Enabled="1" OperationId="222" OperationName="FillGapsRigidBody">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="200"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="FirstFrame"/>
+      <Param macro="SELECTED_END_FRAME" name="LastFrame"/>
+      <Param name="Trajectories" value="LPSI,RPSI,LASI,RASI,LGTR,RGTR"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Torso -->
+  <Entry DisplayName="Fill Torso" Enabled="1" OperationId="222" OperationName="FillGapsRigidBody">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="200"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="FirstFrame"/>
+      <Param macro="SELECTED_END_FRAME" name="LastFrame"/>
+      <Param name="Trajectories" value="LSHO,RSHO,CLAV,C7"/>
+    </ParamList>
+  </Entry>
+
+  <!--//////////////////// 
+  ////  PATTERN FILL  ////
+  /////////////////////-->
+
+  <!-- Pattern Fill Using LMT5 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LTOE,LHEE"/>
+      <Param name="DonorTraj" value="LMT5"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LTOE -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LMT5,LHEE"/>
+      <Param name="DonorTraj" value="LTOE"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LHEE -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LTOE,LMT5"/>
+      <Param name="DonorTraj" value="LHEE"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LANK -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LMMA,LS1,LS2,LS3"/>
+      <Param name="DonorTraj" value="LANK"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LMMA -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LANK,LS1,LS2,LS3"/>
+      <Param name="DonorTraj" value="LMMA"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LKNE -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LMFC,LS1,LS2,LS3,LT1,LT2,LT3,LGTR"/>
+      <Param name="DonorTraj" value="LKNE"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LMFC -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LKNE,LS1,LS2,LS3,LT1,LT2,LT3,LGTR"/>
+      <Param name="DonorTraj" value="LMFC"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LS1 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LS2,LS3"/>
+      <Param name="DonorTraj" value="LS1"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LS2 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LS1,LS3"/>
+      <Param name="DonorTraj" value="LS2"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LS3 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LS1,LS2"/>
+      <Param name="DonorTraj" value="LS3"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LT1 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LT2,LT3"/>
+      <Param name="DonorTraj" value="LT1"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LT2 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LT1,LT3"/>
+      <Param name="DonorTraj" value="LT2"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LT3 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LT1,LT2"/>
+      <Param name="DonorTraj" value="LT3"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using LGTR -->
+  <!--<Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LT1,LT2,LT3"/>
+      <Param name="DonorTraj" value="LGTR"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>-->
+
+  <!-- Pattern Fill Using RMT5 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RTOE,RHEE"/>
+      <Param name="DonorTraj" value="RMT5"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RTOE -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RMT5,RHEE"/>
+      <Param name="DonorTraj" value="RTOE"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RHEE -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RTOE,RMT5"/>
+      <Param name="DonorTraj" value="RHEE"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RANK -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RMMA,RS1,RS2,RS3"/>
+      <Param name="DonorTraj" value="RANK"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RMMA -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RANK,RS1,RS2,RS3"/>
+      <Param name="DonorTraj" value="RMMA"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RKNE -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RMFC,RS1,RS2,RS3,RT1,RT2,RT3,RGTR"/>
+      <Param name="DonorTraj" value="RKNE"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RMFC -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RKNE,RS1,RS2,RS3,RT1,RT2,RT3,RGTR"/>
+      <Param name="DonorTraj" value="RMFC"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RS1 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RS2,RS3"/>
+      <Param name="DonorTraj" value="RS1"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RS2 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RS1,RS3"/>
+      <Param name="DonorTraj" value="RS2"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RS3 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RS1,RS2"/>
+      <Param name="DonorTraj" value="RS3"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RT1 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RT2,RT3"/>
+      <Param name="DonorTraj" value="RT1"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RT2 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RT1,RT3"/>
+      <Param name="DonorTraj" value="RT2"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RT3 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RT1,RT2"/>
+      <Param name="DonorTraj" value="RT3"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Pattern Fill Using RGTR -->
+  <!--<Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RT1,RT2,RT3"/>
+      <Param name="DonorTraj" value="RGTR"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>-->
+
+  <!-- Fill LPSI -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LPSI"/>
+      <Param name="DonorTraj" value="RPSI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LPSI"/>
+      <Param name="DonorTraj" value="LASI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LPSI"/>
+      <Param name="DonorTraj" value="RASI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill RPSI -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RPSI"/>
+      <Param name="DonorTraj" value="LPSI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RPSI"/>
+      <Param name="DonorTraj" value="RASI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RPSI"/>
+      <Param name="DonorTraj" value="LASI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill LASI -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LASI"/>
+      <Param name="DonorTraj" value="RASI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LASI"/>
+      <Param name="DonorTraj" value="LPSI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LASI"/>
+      <Param name="DonorTraj" value="RPSI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill RASI -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RASI"/>
+      <Param name="DonorTraj" value="LASI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RASI"/>
+      <Param name="DonorTraj" value="RPSI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RASI"/>
+      <Param name="DonorTraj" value="LPSI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Pelvis Using LGTR -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RGTR,LPSI,RPSI,LASI,RASI"/>
+      <Param name="DonorTraj" value="LGTR"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Pelvis Using RGTR -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LGTR,LPSI,RPSI,LASI,RASI"/>
+      <Param name="DonorTraj" value="RGTR"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill LSHO -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LSHO"/>
+      <Param name="DonorTraj" value="RSHO"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LSHO"/>
+      <Param name="DonorTraj" value="CLAV"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LSHO"/>
+      <Param name="DonorTraj" value="C7"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill RSHO -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RSHO"/>
+      <Param name="DonorTraj" value="LSHO"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RSHO"/>
+      <Param name="DonorTraj" value="CLAV"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="RSHO"/>
+      <Param name="DonorTraj" value="C7"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill CLAV -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="CLAV"/>
+      <Param name="DonorTraj" value="C7"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="CLAV"/>
+      <Param name="DonorTraj" value="LSHO"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="CLAV"/>
+      <Param name="DonorTraj" value="RSHO"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill C7 -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="C7"/>
+      <Param name="DonorTraj" value="CLAV"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="C7"/>
+      <Param name="DonorTraj" value="LSHO"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="100"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="C7"/>
+      <Param name="DonorTraj" value="RSHO"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Torso Using LPSI for Small Gaps -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="2"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LSHO,RSHO,CLAV,C7"/>
+      <Param name="DonorTraj" value="LPSI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+  <!-- Fill Torso Using RPSI for Small Gaps -->
+  <Entry DisplayName="Fill Gaps - Pattern" Enabled="1" OperationId="8" OperationName="FillGapsPattern">
+    <ParamList name="">
+      <Param name="MaxGapToFill" value="2"/>
+      <Param name="MaxGapFillType" value="0"/>
+      <Param macro="SELECTED_START_FRAME" name="START_FRAME"/>
+      <Param macro="SELECTED_END_FRAME" name="LAST_FRAME"/>
+      <Param name="Trajectories" value="LSHO,RSHO,CLAV,C7"/>
+      <Param name="DonorTraj" value="RPSI"/>
+      <Param name="AllowUnlabeled" value="true"/>
+      <Param name="AllowDifferentSegment" value="true"/>
+    </ParamList>
+  </Entry>
+
+</Pipeline>

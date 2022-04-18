@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SubjectSetup>
+	<AB11>
+		<trials>
+			R3_NE_1
+		</trials>
+		<static>
+			<trial>Static_12</trial>
+			<frame>300</frame>
+		</static>
+	</AB11>
+
+	<segmentedTrials>
+		<R3_NE_1>
+			<fps>Amp3 Amp4</fps>
+			<padding>100</padding>
+		</R3_NE_1>
+	</segmentedTrials>
+
+	<gapFiller>GapFiller_HipExo_Default</gapFiller>
+
+	<rigidBodies>
+		<Torso>
+			<include></include>
+			<ignore>LPSI</ignore>
+		</Torso>
+		<Left_Thigh>
+			<ignore>LASI</ignore>
+		</Left_Thigh>
+		<Right_Thigh>
+			<ignore>RASI</ignore>
+		</Right_Thigh>
+	</rigidBodies>
+</SubjectSetup>
