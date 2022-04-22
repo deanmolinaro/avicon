@@ -11,7 +11,7 @@
 % 4) Comment code.
 % 9) Consider using segmentMarkerStruct for rigid body labeling too.
 
-clear; clc;
+% clear; clc;
 
 timeout = 60;
 timeoutLong = timeout*200;
@@ -24,6 +24,7 @@ setupDir = [viconDir '\..'];
 [setupXml, setupFilePath] = avicon.lib.LoadSetupXml(setupDir);
 
 gapFiller = setupXml.gapFiller;
+markerCheckOpts = GetMarkerCheckOptions(setupXml);
 
 finishedDir = [viconDir '-C3D'];
 unfinishedDir = [viconDir '-C3D_unfinished'];
@@ -156,7 +157,7 @@ for jj=1:length(viconTrialNames)
             end
         end
 
-        badLabels = avicon.MarkerCheck2(vicon, subject, 'MaxAllowableDist', 50, 'MarkerTable', markerTable);
+        badLabels = avicon.MarkerCheck2(vicon, subject, 'MarkerTable', markerTable, markerCheckOpts{:});
         if ~isempty(badLabels)
             if vicon.GetUnlabeledCount > 0
                 avicon.RemoveFarUnlabeledTrajectories(vicon, subject, 'MarkerTable', markerTable);
@@ -181,7 +182,7 @@ for jj=1:length(viconTrialNames)
         missingMarkers = avicon.lib.GetMissingMarkersFromMarkerTable(markerTable);
         gapTableFinal(:, missingMarkers) = [];
         
-        badLabels = avicon.MarkerCheck2(vicon, subject, 'MaxAllowableDist', 50, 'MarkerTable', markerTable);
+        badLabels = avicon.MarkerCheck2(vicon, subject, 'MarkerTable', markerTable, markerCheckOpts{:});
         if ~isempty(badLabels) || ~isempty(gapTableFinal)
             fprintf("Reverting to trial before gap filling.\n");
             avicon.SaveTrialRobust(vicon, timeoutLong);
@@ -209,7 +210,7 @@ for jj=1:length(viconTrialNames)
             [~, gapTableFinal] = avicon.GapCheck(vicon, subject, markerTable, startFrame, endFrame);
         end
         
-        badLabels = avicon.MarkerCheck2(vicon, subject, 'MaxAllowableDist', 50, 'MarkerTable', markerTable);
+        badLabels = avicon.MarkerCheck2(vicon, subject, 'MarkerTable', markerTable, markerCheckOpts{:});
         if ~isempty(badLabels) || ~isempty(gapTableFinal) || ~isempty(missingMarkers) % Technically third argument is redundant to second argument.
             fprintf("Reverting to trial before gap filling and marker filling.\n");
             avicon.SaveTrialRobust(vicon, timeoutLong);
@@ -250,7 +251,7 @@ for jj=1:length(viconTrialNames)
             continue;
         end
 
-        badLabels = avicon.MarkerCheck2(vicon, subject, 'MaxAllowableDist', 50, 'MarkerTable', markerTable);
+        badLabels = avicon.MarkerCheck2(vicon, subject, 'MarkerTable', markerTable, markerCheckOpts{:});
         if ~isempty(badLabels)
             fprintf("Exporting as %s unfinished trial.\n", viconTrialName);
             avicon.ExportTrialRobust(vicon, unfinishedFilePath, 'Timeout', timeoutLong);
@@ -266,7 +267,7 @@ for jj=1:length(viconTrialNames)
             continue;
         end
 
-        badLabels = avicon.MarkerCheck2(vicon, subject, 'MaxAllowableDist', 50, 'MarkerTable', markerTable);
+        badLabels = avicon.MarkerCheck2(vicon, subject, 'MarkerTable', markerTable, markerCheckOpts{:});
         if ~isempty(badLabels)
             fprintf("Exporting as %s unfinished trial.\n", viconTrialName);
             avicon.ExportTrialRobust(vicon, unfinishedFilePath, 'Timeout', timeoutLong);
@@ -362,5 +363,53 @@ if isfield(setupXml, 'rigidBodies')
     end
 end
 end
+
+function [markerCheckOpts] = GetMarkerCheckOptions(setupXml)
+markerCheckOpts = GetDefaultMarkerCheckOptions();
+if isfield(setupXml, 'markerCheck')
+    specOpts = fieldnames(setupXml.markerCheck);
+    for ii=1:length(specOpts)
+        specOpt = specOpts{ii};
+        val = setupXml.markerCheck.(specOpt);
+        
+        if strcmp(specOpt, 'modMinDistNames')
+            val = GetModMinDistNames(val);
+        else
+            if isstring(val) || ischar(val)
+                val  = strsplit(val);
+            end
+        end
+        
+        % Make first letter capitilized for varargin formatting.
+        specOpt(1) = upper(specOpt(1));
+        
+        markerCheckOpts = [markerCheckOpts, {specOpt, val}];
+    end
+end
+end
+
+function [markerCheckOpts] = GetDefaultMarkerCheckOptions()
+markerCheckOpts = {};
+markerCheckOpts = [markerCheckOpts, {'MaxAllowableDist', 50}];
+end
+
+function [modMinDistNames] = GetModMinDistNames(val)
+modMinDistNames = {};
+
+if ~isfield(val, 'pair')
+    return
+end
+
+if ~iscell(val.pair)
+    modMinDistNames = {strsplit(val.pair)};
+    return
+end
+
+for ii=1:length(val.pair)
+    modMinDistNames = [modMinDistNames, {strsplit(val.pair{ii})}];
+end
+
+end
+
 
 

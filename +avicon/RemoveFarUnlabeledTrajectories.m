@@ -46,18 +46,22 @@ for ii=1:length(uLabels)
     uTraj = c3dMarkerTable{:, avicon.lib.GetTrajectoryNames({uLabel})};
     e = markerResiduals.(uLabel);
     
-    dataStartIdxArr = find([0; diff(e~=-1)]>0);
-    dataEndIdxArr = find([diff(e~=-1); 0]<0);
+%     dataStartIdxArr = find([0; diff(e~=-1)]>0);
+%     dataEndIdxArr = find([diff(e~=-1); 0]<0);
+
+    dataStartIdxArr = find(diff([-1; e] ~= -1) > 0);
+    dataEndIdxArr = find(diff([e; -1] ~= -1) < 0);
     
     if isempty(dataStartIdxArr) && isempty(dataEndIdxArr)
         warning('No data for unlabeled marker!\n');
         continue;
     end
     
-    if isempty(dataStartIdxArr); dataStartIdxArr = 1; end
-    if isempty(dataEndIdxArr); dataEndIdxArr = length(e); end
-    if dataEndIdxArr(1) < dataStartIdxArr(1); dataStartIdxArr = [1; dataStartIdxArr]; end
-    if dataStartIdxArr(end) > dataEndIdxArr(end); dataEndIdxArr = [dataEndIdxArr; length(e)]; end
+    % Shouldn't need this using the above version for detection.
+%     if isempty(dataStartIdxArr); dataStartIdxArr = 1; end
+%     if isempty(dataEndIdxArr); dataEndIdxArr = length(e); end
+%     if dataEndIdxArr(1) < dataStartIdxArr(1); dataStartIdxArr = [1; dataStartIdxArr]; end
+%     if dataStartIdxArr(end) > dataEndIdxArr(end); dataEndIdxArr = [dataEndIdxArr; length(e)]; end
     
     for jj=1:length(dataStartIdxArr)
         dataStartIdx = dataStartIdxArr(jj);
