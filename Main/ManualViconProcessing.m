@@ -54,6 +54,7 @@ while true
             viconFilePath = [viconDir '\' viconFileName];
 
             subject = GetSubjectFromTrialName(setupXml, viconTrialName);
+            if isempty(subject); error("Subject is not specified in setup .xml file."); end
             fprintf("Using %s as subject.\n", subject);
             
             staticFilePath = [viconDir '\' setupXml.(subject).static.trial '.c3d'];
@@ -274,15 +275,8 @@ function [cmd] = GetMenuInput()
     cmd = input("");
 end
 
-function [] = SaveTrial(vicon, inputPath, outputPath, timeout)
-    vicon.SaveTrial(timeout);
-    pause(0.1);
-    copyfile(inputPath, outputPath);
-    pause(0.1);
-    delete(inputPath);
-end
-
 function [subject] = GetSubjectFromTrialName(setupXml, trialName)
+subject = '';
 subjectNames = fieldnames(setupXml);
 for ii=1:length(subjectNames)
     if ~isfield(setupXml.(subjectNames{ii}), 'trials')
@@ -313,7 +307,8 @@ unfinishedDir = [viconDir '-C3D_unfinished'];
 [unfinishedFileName, ~] = uigetfile([unfinishedDir '\*.c3d']);
 outputTrialName = erase(unfinishedFileName, '.c3d');
 
-segmentedTrialNames = fieldnames(setupXml.segmentedTrials);
+% segmentedTrialNames = fieldnames(setupXml.segmentedTrials);
+segmentedTrialNames = avicon.lib.GetFieldNamesRobust(setupXml, 'segmentedTrials');
 if any(contains(outputTrialName, segmentedTrialNames))
     viconTrialName = strsplit(outputTrialName, '_');
     viconTrialName = strjoin(viconTrialName(1:end-1), '_');
