@@ -25,6 +25,7 @@ setupDir = [viconDir '\..'];
 
 gapFiller = setupXml.gapFiller;
 markerCheckOpts = GetMarkerCheckOptions(setupXml);
+labelMissedMarkersOpts = GetLabelMissedMarkersOptions(setupXml);
 
 finishedDir = [viconDir '-C3D'];
 unfinishedDir = [viconDir '-C3D_unfinished'];
@@ -37,7 +38,8 @@ if ~exist(tempDir, 'dir'); mkdir(tempDir); end
 viconTrialNames = avicon.GetFileNames(viconDir, '.x1d');
 viconTrialNames = erase(viconTrialNames, '.x1d');
 
-segmentedTrials = fieldnames(setupXml.segmentedTrials);
+% segmentedTrials = fieldnames(setupXml.segmentedTrials);
+segmentedTrials = avicon.lib.GetFieldNamesRobust(setupXml, 'segmentedTrials');
 
 for jj=1:length(viconTrialNames)
     % Get trial names and set up paths
@@ -139,11 +141,11 @@ for jj=1:length(viconTrialNames)
         runStart = false;
         while true
             if rigidBody
-                [missedMarkers, markerTable] = avicon.LabelMissedMarkersRigidBody2(vicon, subject, markerTable);
+                [missedMarkers, markerTable] = avicon.LabelMissedMarkersRigidBody2(vicon, subject, 'MarkerTable', markerTable, labelMissedMarkersOpts{:});
                 rigidBody = false;
                 runStart = true;
             else
-                [missedMarkers, markerTable] = avicon.LabelMissedMarkers2(vicon, subject, markerTable, 2, 30);
+                [missedMarkers, markerTable] = avicon.LabelMissedMarkers2(vicon, subject, 'MarkerTable', markerTable, labelMissedMarkersOpts{:});
                 rigidBody = true;
             end
 
@@ -317,7 +319,8 @@ for ii=1:length(segments)
 end
 
 if isfield(setupXml, 'rigidBodies')
-    specifiedSegments = fieldnames(setupXml.rigidBodies);
+%     specifiedSegments = fieldnames(setupXml.rigidBodies);
+    specifiedSegments = avicon.lib.GetFieldNamesRobust(setupXml, 'rigidBodies');
 
     for ii=1:length(specifiedSegments)
         segment = specifiedSegments{ii};
@@ -364,8 +367,39 @@ if isfield(setupXml, 'rigidBodies')
 end
 end
 
+function [labelMissedMarkersOpts] = GetLabelMissedMarkersOptions(setupXml)
+labelMissedMarkersOpts = GetDefaultLabelMissedMarkersOptions(setupXml);
+if isfield(setupXml, 'labelMissedMarkers')
+    specOpts = fieldnames(setupXml.labelMissedMarkers);
+    for ii=1:length(specOpts)
+        specOpt = specOpts{ii};
+        val = setupXml.labelMissedMarkers.(specOpt);
+        
+        if isstring(val) || ischar(val)
+            val  = strsplit(val);
+        end
+        
+        % Make first letter capitilized for varargin formatting.
+        specOpt(1) = upper(specOpt(1));
+        
+        labelMissedMarkersOpts = [labelMissedMarkersOpts, {specOpt, val}];
+    end
+end
+end
+
+function [labelMissedMarkersOpts] = GetDefaultLabelMissedMarkersOptions(setupXml)
+labelMissedMarkersOpts = {};
+specOpts = avicon.lib.GetFieldNamesRobust(setupXml, 'labelMissedMarkers');
+if ~any(strcmp(specOpts, 'maxGapLengthThreshold')) || isempty(setupXml.labelMissedMarkers.maxGapLengthThreshold)
+    labelMissedMarkersOpts = [labelMissedMarkersOpts, {'MaxGapLengthThreshold', 2}];
+end
+if ~any(strcmp(specOpts, 'maxDistThreshold')) || isempty(setupXml.labelMissedMarkers.maxDistThreshold)
+    labelMissedMarkersOpts = [labelMissedMarkersOpts, {'MaxDistThreshold', 30}];
+end
+end
+
 function [markerCheckOpts] = GetMarkerCheckOptions(setupXml)
-markerCheckOpts = GetDefaultMarkerCheckOptions();
+markerCheckOpts = GetDefaultMarkerCheckOptions(setupXml);
 if isfield(setupXml, 'markerCheck')
     specOpts = fieldnames(setupXml.markerCheck);
     for ii=1:length(specOpts)
@@ -388,9 +422,12 @@ if isfield(setupXml, 'markerCheck')
 end
 end
 
-function [markerCheckOpts] = GetDefaultMarkerCheckOptions()
+function [markerCheckOpts] = GetDefaultMarkerCheckOptions(setupXml)
 markerCheckOpts = {};
-markerCheckOpts = [markerCheckOpts, {'MaxAllowableDist', 50}];
+specOpts = avicon.lib.GetFieldNamesRobust(setupXml, 'markerCheck');
+if ~any(strcmp(specOpts, 'maxAllowableDist')) || isempty(setupXml.markerCheck.maxAllowableDist)
+    markerCheckOpts = [markerCheckOpts, {'MaxAllowableDist', 50}];
+end
 end
 
 function [modMinDistNames] = GetModMinDistNames(val)

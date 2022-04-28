@@ -1,19 +1,19 @@
 function [missedMarkers, markerTable] = LabelMissedMarkers2(vicon, subject, varargin)
 
-narginchk(2,8);
+narginchk(2,20);
 p = inputParser;
 addRequired(p,'vicon');
 addRequired(p, 'subject', @(x) ischar(x) || isstring(x));
 addParameter(p, 'MaxGapLengthThreshold', 1, @isnumeric);
-addParameter(p, 'MaxDistThreshold', 10, @isnumeric);
+addParameter(p, 'MDistThreshold', 10, @isnumeric);
 addParameter(p,'MarkerTable',table(),@istable);
 % addParameter(p,'Verbose',true,@islogical); % TODO: Support verbose option
 
 p.parse(vicon,subject,varargin{:});
 
 
-maxGapLengthThreshold = p.Results.MaxGapLengthThreshold;
-maxDistThreshold = p.Results.MaxDistThreshold;
+minGapLengthThreshold = p.Results.MinGapLengthThreshold;
+minDistThreshold = p.Results.MinDistThreshold;
 markerTable = p.Results.MarkerTable;
 if isempty(markerTable); markerTable = avicon.GetMarkerTable(vicon, subject); end
 
@@ -38,22 +38,6 @@ missedMarkers = {};
 markerNames = vicon.GetMarkerNames(subject);
 
 [startFrame, endFrame] = vicon.GetTrialRegionOfInterest();
-
-% Check if all marker labels already exist (can't use GapCheck since we
-% need to include missing markers at start and end)
-gaps = false;
-for ii=1:length(markerNames)
-    trajNames = avicon.lib.GetTrajectoryNames(markerNames{ii});
-    if any(~any(markerTable{startFrame:endFrame, trajNames}, 2))
-        gaps = true;
-        break;
-    end
-end
-
-if ~gaps
-    fprintf("All labels exist!\n");
-    return;
-end
 
 fprintf("Labeling missed markers.\n");
 for ii=1:vicon.GetUnlabeledCount()
@@ -100,7 +84,7 @@ for ii=1:vicon.GetUnlabeledCount()
         yTraj = y(gapStartIdx:gapEndIdx);
         zTraj = z(gapStartIdx:gapEndIdx);
         dTraj = sqrt(diff(xTraj).^2 + diff(yTraj).^2 + diff(zTraj).^2);
-        missedEndIdxArr = find(dTraj > maxDistThreshold) + gapStartIdx - 1;
+        missedEndIdxArr = find(dTraj > minDistThreshold) + gapStartIdx - 1;
 
         correctedGapStartIdxArr = [correctedGapStartIdxArr, gapStartIdx];
         for kk=1:length(missedEndIdxArr)
@@ -127,7 +111,7 @@ for ii=1:vicon.GetUnlabeledCount()
 %         minStartDist = 99999;
 %         minEndDist = 99999;
         minDist = 99999;
-        minGapLength = maxGapLengthThreshold;
+        minGapLength = minGapLengthThreshold;
         minMarker = '';
         for kk=1:length(markerNames)
             markerName = markerNames{kk};
@@ -189,7 +173,7 @@ for ii=1:vicon.GetUnlabeledCount()
             
             % Check labeled marker based on start of unlabeled trajectory
             % First only check trajectories that qualify based on thresholds
-            if startDist < maxDistThreshold && startGapLength <= maxGapLengthThreshold
+            if startDist < minDistThreshold && startGapLength <= minGapLengthThreshold
                 % Now check for best marker
                 if (startGapLength < minGapLength) || (startGapLength == minGapLength && startDist < minDist)
                     % Criteria 1: Select new label if it qualifies and has lower gapLength than previous selected label
@@ -202,7 +186,7 @@ for ii=1:vicon.GetUnlabeledCount()
             
             % Check labeled marker based on end of unlabeled trajectory
             % First only check trajectories that qualify based on thresholds
-            if endDist < maxDistThreshold && endGapLength <= maxGapLengthThreshold
+            if endDist < minDistThreshold && endGapLength <= minGapLengthThreshold
                 % Now check for best marker
                 if (endGapLength < minGapLength) || (endGapLength == minGapLength && endDist < minDist)
                     % Criteria 1: Select new label if it qualifies and has lower gapLength than previous selected label
@@ -214,7 +198,7 @@ for ii=1:vicon.GetUnlabeledCount()
             end
         end
         
-        if minDist <= maxDistThreshold && minGapLength <= maxGapLengthThreshold
+        if minDist <= minDistThreshold && minGapLength <= minGapLengthThreshold
             markerName = minMarker;
             
             xMarker = markerTable.([markerName '_x']);
