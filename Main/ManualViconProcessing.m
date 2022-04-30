@@ -117,7 +117,7 @@ while true
         elseif cmd == 4
             if vicon.GetUnlabeledCount() > 0
                 fprintf("Unlabeled trajectories remaining. Please remove before continuing.\n");
-                response = input("Continue anyways? (y/n): ");
+                response = input("Continue anyways? (y/n): ", 's');
                 fprintf("\n");
             else
                 response = 'y';
