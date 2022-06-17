@@ -78,9 +78,35 @@ for jj=1:length(viconTrialNames)
 
     if any(strcmp(segmentedTrials, viconTrialName))
         fprintf("Segmenting trial based on force plates.\n");
-        fpNames = strsplit(setupXml.segmentedTrials.(viconTrialName).fps);
-        padding = setupXml.segmentedTrials.(viconTrialName).padding;
-        segmentTable = avicon.GetTrialSegmentsFromForcePlates(vicon, fpNames, padding);
+        if isfield(setupXml.segmentedTrials.(viconTrialName), 'frames')
+            [viconStartFrame, viconEndFrame] = vicon.GetTrialRegionOfInterest();
+            
+            frames = setupXml.segmentedTrials.(viconTrialName).frames;
+            if ~iscell(frames); frames = {frames}; end
+            
+            startFrames = ones(length(frames), 1) * NaN;
+            endFrames = ones(length(frames), 1) * NaN;
+            for ii=1:length(frames)
+                frame = frames{ii};
+            
+                startFrame = frame(1);
+                if startFrame < 0; startFrame = viconEndFrame + startFrame + 1; end
+                startFrames(ii) = startFrame;
+
+                endFrame = frame(2);
+                if endFrame < 0; endFrame = viconEndFrame + endFrame + 1; end
+                endFrames(ii) = endFrame;
+            end
+            
+            segmentTable = array2table([startFrames, endFrames], 'VariableNames', {'startFrame', 'endFrame'});
+            
+            clear startFrame endFrame startFrames endFrames viconStartFrame viconEndFrame
+        else
+            fpNames = strsplit(setupXml.segmentedTrials.(viconTrialName).fps);
+            padding = setupXml.segmentedTrials.(viconTrialName).padding;
+            segmentTable = avicon.GetTrialSegmentsFromForcePlates(vicon, fpNames, padding);
+        end
+        
     else
         [startFrame, endFrame] = vicon.GetTrialRegionOfInterest();
         segmentTable = cell2table({startFrame, endFrame, 'N/A', 'N/A'}, 'VariableNames', {'startFrame', 'endFrame', 'startFP', 'endFP'});
