@@ -309,14 +309,9 @@ outputTrialName = erase(unfinishedFileName, '.c3d');
 
 % segmentedTrialNames = fieldnames(setupXml.segmentedTrials);
 segmentedTrialNames = avicon.lib.GetFieldNamesRobust(setupXml, 'segmentedTrials');
-
-viconTrialName = strsplit(outputTrialName, '_');
-viconTrialName = strjoin(viconTrialName(1:end-1), '_');
-
-if any(strcmp(viconTrialName, segmentedTrialNames))
-    appendNum = avicon.lib.GetStructValueRobust(setupXml, {'segmentedTrials', viconTrialName, 'appendNum'}, 'true');
-    appendNum = strcmp(appendNum, 'true');
-    if ~appendNum; viconTrialName = outputTrialName; end
+if any(contains(outputTrialName, segmentedTrialNames))
+    viconTrialName = strsplit(outputTrialName, '_');
+    viconTrialName = strjoin(viconTrialName(1:end-1), '_');
 else
     viconTrialName = outputTrialName;
 end

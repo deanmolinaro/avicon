@@ -76,9 +76,6 @@ for jj=1:length(viconTrialNames)
         avicon.OpenTrialRobust(vicon, viconTrialPath, timeoutLong, 'SaveTrial', false);
     end
 
-    appendNum = avicon.lib.GetStructValueRobust(setupXml, {'segmentedTrials', viconTrialName, 'appendNum'}, 'true');
-    appendNum = strcmp(appendNum, 'true');
-
     if any(strcmp(segmentedTrials, viconTrialName))
         fprintf("Segmenting trial based on force plates.\n");
         if isfield(setupXml.segmentedTrials.(viconTrialName), 'frames')
@@ -116,28 +113,12 @@ for jj=1:length(viconTrialNames)
     end
 
     for ii=1:height(segmentTable)
-%         if height(segmentTable) == 1
-%             finishedFilePath = [finishedDir '\' viconFileName];
-%             unfinishedFilePath = [unfinishedDir '\' viconFileName];
-%         else
-%             finishedFilePath = [finishedDir '\' viconTrialName '_' num2str(ii) '.c3d'];
-%             unfinishedFilePath = [unfinishedDir '\' viconTrialName '_' num2str(ii) '.c3d'];
-%         end
-
-        if height(segmentTable) > 1
-            if ~appendNum
-                error("%s: appendNum = false but multiple segments found within trial.", viconTrialName);
-            end
+        if height(segmentTable) == 1
+            finishedFilePath = [finishedDir '\' viconFileName];
+            unfinishedFilePath = [unfinishedDir '\' viconFileName];
+        else
             finishedFilePath = [finishedDir '\' viconTrialName '_' num2str(ii) '.c3d'];
             unfinishedFilePath = [unfinishedDir '\' viconTrialName '_' num2str(ii) '.c3d'];
-        else
-            if appendNum
-                finishedFilePath = [finishedDir '\' viconTrialName '_' num2str(ii) '.c3d'];
-                unfinishedFilePath = [unfinishedDir '\' viconTrialName '_' num2str(ii) '.c3d'];
-            else
-                finishedFilePath = [finishedDir '\' viconFileName];
-                unfinishedFilePath = [unfinishedDir '\' viconFileName];
-            end
         end
 
         % Check if trial has already been processed
