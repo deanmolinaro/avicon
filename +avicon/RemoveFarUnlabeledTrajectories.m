@@ -77,6 +77,7 @@ for ii=1:length(uLabels)
             markerName = markerNames{kk};
             markerTrajNames = avicon.lib.GetTrajectoryNames({markerName});
             markerTraj = markerTable{dataStartIdx:dataEndIdx, markerTrajNames};
+            markerTraj(sum(markerTraj.^2, 2)==0, :) = NaN;
             
             dist = sqrt(sum((data - markerTraj).^2, 2));
             dist = min(dist);

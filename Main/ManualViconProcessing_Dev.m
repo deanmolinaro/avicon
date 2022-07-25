@@ -56,6 +56,17 @@ while true
             subject = GetSubjectFromTrialName(setupXml, viconTrialName);
             if isempty(subject); error("Subject is not specified in setup .xml file."); end
             fprintf("Using %s as subject.\n", subject);
+
+            % Make sure correct subject is active
+            allSubjects = vicon.GetSubjectNames();
+            for kk=1:length(allSubjects)
+                s = allSubjects{kk};
+                if strcmp(s, subject)
+                    vicon.SetSubjectActive(s, 1);
+                else
+                    vicon.SetSubjectActive(s, 0);
+                end
+            end
             
             staticFilePath = [viconDir '\' setupXml.(subject).static.trial '.c3d'];
             staticFrame = setupXml.(subject).static.frame;
