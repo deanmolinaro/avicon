@@ -41,6 +41,8 @@ viconTrialNames = erase(viconTrialNames, '.x1d');
 % segmentedTrials = fieldnames(setupXml.segmentedTrials);
 segmentedTrials = avicon.lib.GetFieldNamesRobust(setupXml, 'segmentedTrials');
 
+% viconTrialNames = {'S4_BT_2'};
+
 for jj=1:length(viconTrialNames)
     % Get trial names and set up paths
     viconTrialName = viconTrialNames{jj};
@@ -76,8 +78,12 @@ for jj=1:length(viconTrialNames)
         avicon.OpenTrialRobust(vicon, viconTrialPath, timeoutLong, 'SaveTrial', false);
     end
 
-    appendNum = avicon.lib.GetStructValueRobust(setupXml, {'segmentedTrials', viconTrialName, 'appendNum'}, 'true');
-    appendNum = strcmp(appendNum, 'true');
+    if any(strcmp(avicon.lib.GetFieldNamesRobust(setupXml, 'segmentedTrials'), viconTrialName))
+        appendNum = avicon.lib.GetStructValueRobust(setupXml, {'segmentedTrials', viconTrialName, 'appendNum'}, 'true');
+        appendNum = strcmp(appendNum, 'true');
+    else
+        appendNum = false;
+    end
 
     if any(strcmp(segmentedTrials, viconTrialName))
         fprintf("Segmenting trial based on force plates.\n");
