@@ -1,12 +1,13 @@
 function [missedMarkers, markerTable] = LabelMissedMarkersRigidBody2(vicon, subject, varargin)
 
-narginchk(2,8); % We have this one larger since LabelMissedMarkers2 has one extra option that we would just ignore.
+narginchk(2,10); % We have this one larger since LabelMissedMarkers2 has one extra option that we would just ignore.
 p = inputParser;
 addRequired(p,'vicon');
 addRequired(p, 'subject', @(x) ischar(x) || isstring(x));
 addParameter(p, 'MaxGapLengthThreshold', 1, @isnumeric);  % Keep this to use same opts for this function and LabelMissedMarkers2.
 addParameter(p, 'MaxDistThreshold', 20, @isnumeric);
 addParameter(p,'MarkerTable',table(),@istable);
+addParameter(p, 'SegmentMarkers', struct(), @isstruct);
 % addParameter(p,'Verbose',true,@islogical); % TODO: Support verbose option
 
 p.parse(vicon,subject,varargin{:});
@@ -14,6 +15,8 @@ p.parse(vicon,subject,varargin{:});
 maxDistThreshold = p.Results.MaxDistThreshold;
 markerTable = p.Results.MarkerTable;
 if isempty(markerTable); markerTable = avicon.GetMarkerTable(vicon, subject); end
+segmentMarkerStruct = p.Results.SegmentMarkers;
+if isempty(fieldnames(segmentMarkerStruct)); segmentMarkerStruct = avicon.lib.BuildConservativeSegmentMarkerStruct(vicon, subject); end
 
 getTrajectoryNames = @(x) {[x '_x'], [x '_y'], [x '_z']};
 getDist = @(x,y) sqrt((x(:,1)-y(:,1)).^2 + (x(:,2)-y(:,2)).^2 + (x(:,3)-y(:,3)).^2);
@@ -48,7 +51,8 @@ if ~gaps
     return;
 end
 
-rigidBodies = vicon.GetSegmentNames(subject);
+% rigidBodies = vicon.GetSegmentNames(subject);
+rigidBodies = fieldnames(segmentMarkerStruct);
 
 fprintf("Labeling missed markers from rigid bodies.\n");
 for ii=1:vicon.GetUnlabeledCount()
@@ -140,7 +144,8 @@ for ii=1:vicon.GetUnlabeledCount()
             
             for mm=1:length(rigidBodies)
 %                 bodyMarkers = rigidBodies{mm};
-                [~, ~, bodyMarkers] = vicon.GetSegmentDetails(subject, rigidBodies{mm});
+%                 [~, ~, bodyMarkers] = vicon.GetSegmentDetails(subject, rigidBodies{mm});
+                bodyMarkers = segmentMarkerStruct.(rigidBodies{mm});
                 if ~any(strcmp(bodyMarkers, markerName)); continue; end
                 
                 % Find where >=3 rigid body markers exist to locate expected marker

@@ -41,6 +41,8 @@ viconTrialNames = erase(viconTrialNames, '.x1d');
 % segmentedTrials = fieldnames(setupXml.segmentedTrials);
 segmentedTrials = avicon.lib.GetFieldNamesRobust(setupXml, 'segmentedTrials');
 
+% viconTrialNames = {'S4_BT_2'};
+
 for jj=1:length(viconTrialNames)
     % Get trial names and set up paths
     viconTrialName = viconTrialNames{jj};
@@ -257,6 +259,16 @@ for jj=1:length(viconTrialNames)
         missingMarkers = avicon.lib.GetMissingMarkersFromMarkerTable(markerTable);
         if ~isempty(missingMarkers)
             fprintf("Filling missing markers based on rigid bodies.\n");
+            
+            % Used this for BT13 (collection 2)
+%             fprintf("Removing knee markers from thigh segment for filling.\n");
+%             fillSegmentMarkerStruct = segmentMarkerStruct;
+%             fillSegmentMarkerStruct.LeftThigh(strcmp(fillSegmentMarkerStruct.LeftThigh, 'LMFC')) = [];
+%             fillSegmentMarkerStruct.LeftThigh(strcmp(fillSegmentMarkerStruct.LeftThigh, 'LKNE')) = [];
+%             fillSegmentMarkerStruct.RightThigh(strcmp(fillSegmentMarkerStruct.RightThigh, 'RMFC')) = [];
+%             fillSegmentMarkerStruct.RightThigh(strcmp(fillSegmentMarkerStruct.RightThigh, 'RKNE')) = [];
+%             [markerTable, missingMarkers, ~] = avicon.FillMissingMarkers(vicon, subject, staticFilePath, 'StaticFrame', staticFrame, 'MarkerTable', markerTable, 'SegmentMarkers', fillSegmentMarkerStruct);
+
             [markerTable, missingMarkers, ~] = avicon.FillMissingMarkers(vicon, subject, staticFilePath, 'StaticFrame', staticFrame, 'MarkerTable', markerTable, 'SegmentMarkers', segmentMarkerStruct);
             [~, gapTableFinal] = avicon.GapCheck(vicon, subject, markerTable, startFrame, endFrame);
         end
